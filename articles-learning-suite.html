@@ -1409,7 +1409,7 @@ function showGuardianHelp() {
 }
 
 function renderLiveItem(item) {
-  renderSpotExercise(liveCard, item, false, () => {}, () => loadLive());
+  renderSpotExercise(liveCard, item, false, () => {}, () => loadLive(), explainAIMistakes);
 }
 
 const guardianKeyInput = document.getElementById("guardianKey");
