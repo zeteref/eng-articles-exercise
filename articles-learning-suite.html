@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles for Polish Speakers — a / an / the / ∅</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --ink: #1f2430;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #4f46e5;
+    --accent-soft: #eef2ff;
+    --ok: #16a34a;
+    --ok-soft: #ecfdf5;
+    --bad: #dc2626;
+    --bad-soft: #fef2f2;
+    --amber: #b45309;
+    --amber-soft: #fffbeb;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(16,24,40,.08), 0 1px 2px rgba(16,24,40,.04);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    background: linear-gradient(135deg, #312e81, #4f46e5);
+    color: #fff;
+    padding: 32px 20px 26px;
+  }
+  header .wrap { max-width: 880px; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 1.7rem; letter-spacing: -.01em; }
+  header p { margin: 0; opacity: .92; max-width: 640px; }
+  nav {
+    max-width: 880px; margin: 0 auto; padding: 0 20px;
+    display: flex; gap: 6px; flex-wrap: wrap;
+    position: sticky; top: 0; background: rgba(244,245,247,.94);
+    backdrop-filter: blur(8px); z-index: 10;
+    border-bottom: 1px solid var(--line);
+  }
+  nav button {
+    appearance: none; border: none; background: transparent;
+    font-size: .95rem; font-weight: 600; color: var(--muted);
+    padding: 14px 14px; cursor: pointer; border-bottom: 3px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  nav button.active { color: var(--accent); border-bottom-color: var(--accent); }
+  nav button:hover { color: var(--ink); }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 20px 80px; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  h2 { font-size: 1.25rem; margin: 28px 0 12px; }
+  h2 .kicker { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); display: block; margin-bottom: 2px; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 18px 20px; margin-bottom: 14px;
+  }
+  details.card { padding: 0; overflow: hidden; }
+  details.card summary {
+    cursor: pointer; list-style: none; padding: 16px 20px;
+    font-weight: 700; display: flex; align-items: center; gap: 10px;
+  }
+  details.card summary::-webkit-details-marker { display: none; }
+  details.card summary .tag {
+    font-size: .72rem; font-weight: 700; color: var(--accent);
+    background: var(--accent-soft); border-radius: 999px; padding: 2px 9px;
+    white-space: nowrap;
+  }
+  details.card summary::after {
+    content: "+"; margin-left: auto; font-size: 1.2rem; color: var(--muted);
+    transition: transform .15s;
+  }
+  details.card[open] summary::after { transform: rotate(45deg); }
+  details.card .body { padding: 0 20px 18px; }
+
+  .rule { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+  .warn { border-left: 3px solid var(--amber); background: var(--amber-soft); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+  .good { border-left: 3px solid var(--ok); background: var(--ok-soft); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: #eef0f3; padding: 1px 5px; border-radius: 5px; }
+  .ex { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .ex span { background: #f8fafc; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: .92rem; }
+  .ex .good-ex { color: var(--ok); font-weight: 600; }
+  .ex .bad-ex { color: var(--bad); text-decoration: line-through; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .92rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+
+  /* Exercises */
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+  .toolbar select {
+    padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px;
+    background: #fff; font-size: .92rem; color: var(--ink); cursor: pointer;
+  }
+  .toolbar input[type="text"] {
+    padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px;
+    background: #fff; font-size: .92rem; color: var(--ink);
+    min-width: 200px; flex: 1 1 180px;
+  }
+  .btn {
+    appearance: none; border: 1px solid var(--line); background: #fff;
+    padding: 8px 14px; border-radius: 8px; font-size: .92rem; font-weight: 600;
+    color: var(--ink); cursor: pointer; transition: background .12s, border-color .12s;
+  }
+  .btn:hover { background: #f3f4f6; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: #4338ca; }
+
+  .progress { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; margin-bottom: 14px; }
+  .progress > div { height: 100%; background: var(--accent); transition: width .2s; }
+
+  .exercise { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 20px; }
+  .exercise .module-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+  .sentence { font-size: 1.3rem; font-weight: 500; line-height: 1.5; margin: 10px 0 18px; }
+  .sentence .blank { display: inline-block; min-width: 2.4em; text-align: center; border-bottom: 2px dashed var(--muted); margin: 0 2px; }
+  .sentence .blank.filled { border-bottom: 2px solid var(--accent); font-weight: 700; }
+  .sentence .blank.correct { color: var(--ok); border-bottom-color: var(--ok); }
+  .sentence .blank.wrong { color: var(--bad); border-bottom-color: var(--bad); }
+
+  .options { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .option {
+    appearance: none; border: 1.5px solid var(--line); background: #fff;
+    padding: 10px 16px; border-radius: 9px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: all .12s; min-width: 64px;
+  }
+  .option:hover { border-color: var(--accent); color: var(--accent); }
+  .option:disabled { cursor: default; opacity: .85; }
+  .option.chosen-correct { background: var(--ok); border-color: var(--ok); color: #fff; }
+  .option.chosen-wrong { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .option.reveal { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); }
+
+  .feedback { display: none; border-radius: 9px; padding: 12px 14px; margin-bottom: 14px; font-size: .95rem; }
+  .feedback.show { display: block; }
+  .feedback.ok { background: var(--ok-soft); border: 1px solid #bbf7d0; }
+  .feedback.no { background: var(--bad-soft); border: 1px solid #fecaca; }
+  .feedback .why { color: var(--muted); margin-top: 6px; }
+  .feedback .gloss { margin-top: 6px; font-style: italic; color: var(--muted); }
+
+  .next-row { display: flex; gap: 10px; align-items: center; }
+  .hint-btn { background: none; border: none; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: .88rem; }
+
+  .score-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; font-weight: 700; font-size: .9rem; }
+
+  .results { text-align: center; padding: 10px 0; }
+  .results .big { font-size: 2.2rem; font-weight: 800; margin: 8px 0 4px; }
+  .mistake-list { text-align: left; margin-top: 18px; }
+  .mistake-list li { margin-bottom: 10px; }
+
+  /* Spot & insert */
+  .spot-sentence {
+    font-size: 1.2rem; line-height: 2.6; margin: 12px 0;
+    padding: 16px 14px; background: #fafbfc; border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  .spot-word-wrap { display: inline-block; vertical-align: top; }
+  .spot-art {
+    display: block; height: 1.2em; line-height: 1.2em; text-align: center;
+    font-size: 0.72em; font-weight: 700; color: var(--accent);
+    white-space: nowrap;
+  }
+  .spot-word {
+    display: block;
+    padding: 2px 5px; border-radius: 6px; cursor: pointer;
+    transition: background .12s; border: 1.5px solid transparent;
+  }
+  .spot-sentence .spot-word:hover { background: var(--accent-soft); }
+  .spot-sentence.done .spot-word { cursor: default; }
+  .spot-word.good { background: #d1fae5; border-color: var(--ok); }
+  .spot-word.bad { background: var(--bad-soft); border-color: var(--bad); }
+  .spot-art.reveal-ok { color: var(--ok); }
+  .spot-art.reveal-bad { color: var(--bad); text-decoration: line-through; }
+  .spot-legend { font-size: .85rem; color: var(--muted); margin: 0 0 6px; }
+
+  footer { max-width: 880px; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: .85rem; }
+  @media (max-width: 600px) { .sentence { font-size: 1.15rem; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Articles for Polish Speakers</h1>
+    <p>Polish has no articles, so <strong>a / an / the / ∅</strong> must be learned as a new instinct. This suite teaches the four choices through the mental models Polish already gives you — <em>jakiś</em>, <em>ten/ta/to</em>, and word order.</p>
+  </div>
+</header>
+
+<nav>
+  <button data-view="lessons" class="active">Lessons</button>
+  <button data-view="practice">Fill in (guided)</button>
+  <button data-view="spot">Spot &amp; insert (hard)</button>
+  <button data-view="live">Live</button>
+  <button data-view="ai">AI drills</button>
+  <button data-view="quiz">Quiz</button>
+</nav>
+
+<main>
+
+  <!-- ============ LESSONS ============ -->
+  <section id="lessons" class="view active">
+    <h2><span class="kicker">Start here</span>The four choices</h2>
+    <div class="card">
+      <p>Every time a noun appears, English asks one question: <strong>does the listener already know which one I mean?</strong> The answer picks the article.</p>
+      <table>
+        <tr><th>Choice</th><th>Meaning</th><th>Polish cue</th></tr>
+        <tr><td><code>a / an</code></td><td>one of many, not yet identified</td><td><em>jakiś / jakaś / jakieś</em></td></tr>
+        <tr><td><code>the</code></td><td>the specific one we both know</td><td><em>ten / ta / to</em></td></tr>
+        <tr><td><code>∅</code> (nothing)</td><td>general, uncountable, or a category</td><td>no <em>jakiś</em>, no <em>ten</em> — just the bare noun</td></tr>
+      </table>
+      <div class="warn">Most Polish errors go in two directions: <strong>dropping "the"</strong> (<em>"I go to store"</em>) and <strong>adding "the" before general nouns</strong> (<em>"The music is nice"</em>). This suite drills both.</div>
+    </div>
+
+    <h2><span class="kicker">Lesson 1</span>a vs an (phonetic, easy)</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 1</span> a vs an — listen, don't look</summary>
+      <div class="body">
+        <p>The choice between <code>a</code> and <code>an</code> depends on the <strong>sound</strong> that follows, not the letter.</p>
+        <div class="ex">
+          <span class="good-ex">a dog, a job, a USB cable, a user, a university</span>
+          <span class="good-ex">an apple, an engineer, an hour, an honor, an honest man</span>
+        </div>
+        <p><code>USB</code> starts with the sound /juː/ (a consonant sound), so it's <strong>a</strong> USB. <code>hour</code> starts with a vowel sound (the <em>h</em> is silent), so it's <strong>an</strong> hour.</p>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Lesson 2</span>The jakiś / ten test</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 2</span> The jakiś / ten substitution trick</summary>
+      <div class="body">
+        <p>When unsure, translate in your head and try to insert <em>jakiś</em> or <em>ten/ta/to</em>:</p>
+        <table>
+          <tr><th>If this fits…</th><th>…use this</th><th>Example</th></tr>
+          <tr><td><em>jakiś / jakaś / jakieś</em></td><td><code>a / an</code></td><td>upload to <strong>a</strong> Vault instance (<em>jakaś</em> instancja)</td></tr>
+          <tr><td><em>ten / ta / to</em></td><td><code>the</code></td><td>reviewed by <strong>the</strong> OPL security team (<em>ten</em> zespół)</td></tr>
+        </table>
+        <div class="warn"><strong>Scope this test carefully.</strong> It only decides <em>a/an</em> vs <em>the</em>, and only for <strong>singular countable nouns</strong>.</div>
+        <ul>
+          <li>For <strong>unique things</strong> (<em>the sun, the internet, the database</em>) you would <em>not</em> say <em>ten</em> in Polish — but English still uses <em>the</em>. See Lesson 5.</li>
+          <li>For <strong>general or uncountable</strong> nouns (<em>music, life, information</em>) neither <em>jakiś</em> nor <em>ten</em> fits, and the answer is <strong>nothing</strong>. See Lesson 6.</li>
+          <li><em>jakiś</em> becomes <strong>"some"</strong>, not "a/an", for plurals and uncountables: <em>jakieś problemy</em> = "some problems", never "a problems".</li>
+        </ul>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Lesson 3</span>The singular noun alarm</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 3</span> A singular countable noun needs a bodyguard</summary>
+      <div class="body">
+        <div class="rule">A singular countable noun (file, server, team, request, dog) is <strong>never bare</strong>. It needs a determiner in front of it.</div>
+        <p>That bodyguard can be:</p>
+        <ul>
+          <li><code>a / an</code> — <em>a file</em></li>
+          <li><code>the</code> — <em>the file</em></li>
+          <li>a possessive — <em>my file, its file, OPL's file</em></li>
+          <li>a pointer — <em>this file, that file</em></li>
+          <li>a quantifier — <em>each file, every file, some file, no file, another file</em></li>
+        </ul>
+        <p>When you write a singular noun, pause: is there a word directly before it (or before its adjective)? If not, your alarm should fire.</p>
+        <div class="warn"><strong>Exception — fixed expressions:</strong> some everyday phrases use no article at all: <em>by email, by car, go home, go to work, go to school</em> (when school/work is the activity, not the building). These are idioms — learn them as set phrases.</div>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Lesson 4</span>First vs second mention</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 4</span> The movie rule</summary>
+      <div class="body">
+        <p>Think of introducing a character in a film:</p>
+        <ul>
+          <li><strong>First appearance</strong> — the audience doesn't know them yet → <code>a / an</code></li>
+          <li><strong>Every appearance after</strong> — the audience recognises them → <code>the</code></li>
+        </ul>
+        <div class="ex">
+          <span>We deployed <strong>a</strong> new configuration. Later, <strong>the</strong> configuration fixed the bug.</span>
+        </div>
+        <div class="warn">Precision fix: first mention takes <em>a</em> because the thing is <strong>new information to the reader</strong> — not because it "doesn't exist yet". <em>"I bought a car"</em>: the car very much exists; it's just new to the conversation.</div>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Lesson 5</span>Unique reference</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 5</span> Only one in the room</summary>
+      <div class="body">
+        <p>You can skip the "first mention with a" step when there is <strong>only one</strong> of the thing in the shared context — you and the reader both know which one immediately, so go straight to <code>the</code>.</p>
+        <div class="ex">
+          <span class="good-ex">the ApiHub platform, the OPL security team, the MR flow</span>
+          <span class="good-ex">the database, the backend, the production environment</span>
+          <span class="good-ex">the sun, the internet, the government</span>
+        </div>
+        <p>Also use <code>the</code> with:</p>
+        <ul>
+          <li><strong>superlatives</strong> — <em>the best developer, the fastest route</em></li>
+          <li><strong>ordinals</strong> — <em>the first time, the third attempt</em></li>
+          <li><strong>the only</strong> — <em>the only solution</em></li>
+        </ul>
+        <div class="warn">Bare product names usually take <strong>no article</strong>: <em>deploy to AWS</em>, not "the AWS". But <em>"the ApiHub platform"</em> is correct, because <em>platform</em> is the common noun doing the work.</div>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Lesson 6</span>The zero article — the missing piece</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 6</span> When to use nothing (∅)</summary>
+      <div class="body">
+        <p>This is where Polish speakers most often <strong>over-use "the"</strong>. Use <strong>no article</strong> for general categories and uncountables:</p>
+        <table>
+          <tr><th>Category</th><th>Example</th><th>Common Polish error</th></tr>
+          <tr><td>general plural</td><td>Cats are independent.</td><td><span class="bad-ex">The cats are independent</span> (wrong for "cats in general")</td></tr>
+          <tr><td>uncountable</td><td>I love music. Life is short.</td><td><span class="bad-ex">The music is nice</span>, <span class="bad-ex">the life</span></td></tr>
+          <tr><td>languages</td><td>She speaks English.</td><td><span class="bad-ex">the English</span></td></tr>
+          <tr><td>sports</td><td>We play football.</td><td><span class="bad-ex">the football</span></td></tr>
+          <tr><td>meals</td><td>I had breakfast.</td><td><span class="bad-ex">the breakfast</span></td></tr>
+        </table>
+        <div class="good">The test: if <em>jakiś</em> and <em>ten</em> both sound wrong in Polish, the answer is usually <strong>nothing</strong> — unless the noun is unique (Lesson 5).</div>
+        <p>Watch the contrast — the same noun flips when it becomes specific:</p>
+        <div class="ex">
+          <span>I drink <strong>∅</strong> coffee every morning. → <strong>The</strong> coffee you made was delicious.</span>
+        </div>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Lesson 7</span>The Polish word-order trap</h2>
+    <details class="card">
+      <summary><span class="tag">Lesson 7</span> Polish marks old/new with word order; English uses articles</summary>
+      <div class="body">
+        <p>Polish often signals <em>known</em> vs <em>new</em> information by word order. English does the same job with articles.</p>
+        <div class="ex">
+          <span><em>Plik został wysłany.</em> (topic first — the known file) → <strong>The</strong> file was sent.</span>
+          <span><em>Został wysłany plik.</em> (new info last) → <strong>A</strong> file was sent.</span>
+        </div>
+        <p>When translating from Polish, notice whether the noun feels like <strong>known background</strong> (<em>the</em>) or <strong>new information being introduced</strong> (<em>a/an</em>). It's a tendency, not a hard rule, but it's a strong one.</p>
+      </div>
+    </details>
+
+    <h2><span class="kicker">Cheat sheet</span>Your proofreading pass</h2>
+    <div class="card">
+      <p>Before publishing, do one fast pass looking <strong>only at nouns</strong>:</p>
+      <ol>
+        <li><strong>Singular and countable?</strong> → it must not be bare (Lesson 3).</li>
+        <li><strong>Only one of it in the system/context?</strong> → <code>the</code> (Lesson 5).</li>
+        <li><strong>Already mentioned earlier?</strong> → <code>the</code> (Lesson 4).</li>
+        <li><strong>One example of many, introduced for the first time?</strong> → <code>a / an</code>.</li>
+        <li><strong>General category or uncountable?</strong> → <strong>nothing</strong> (Lesson 6).</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICE ============ -->
+  <section id="practice" class="view">
+    <h2>Practice</h2>
+    <div class="toolbar">
+      <select id="moduleFilter">
+        <option value="all">All topics</option>
+      </select>
+      <select id="modeFilter">
+        <option value="all">All sentences</option>
+        <option value="mistakes">Only my mistakes</option>
+      </select>
+      <button class="btn" id="clearMistakes">Clear mistakes</button>
+    </div>
+    <div class="progress"><div id="practiceProgress"></div></div>
+    <div id="practiceCard" class="exercise"></div>
+  </section>
+
+  <!-- ============ SPOT & INSERT ============ -->
+  <section id="spot" class="view">
+    <h2>Spot &amp; insert</h2>
+    <p style="color:var(--muted); margin-top:0;">The articles have been stripped. Click each word to cycle the article that belongs in front of it (none &rarr; a &rarr; an &rarr; the). Some sentences are already correct &mdash; press <strong>Check</strong> without adding anything.</p>
+    <div class="toolbar">
+      <select id="spotModuleFilter">
+        <option value="all">All topics</option>
+      </select>
+      <select id="spotModeFilter">
+        <option value="random" selected>Random mix</option>
+        <option value="inorder">In order</option>
+        <option value="mistakes">Only my mistakes</option>
+      </select>
+      <button class="btn" id="clearSpotMistakes">Clear mistakes</button>
+    </div>
+    <div class="progress"><div id="spotProgress"></div></div>
+    <div id="spotCard" class="exercise"></div>
+  </section>
+
+  <!-- ============ LIVE ============ -->
+  <section id="live" class="view">
+    <h2>Live text</h2>
+    <p style="color:var(--muted); margin-top:0;">Real sentences pulled from the news, with the articles stripped. Click each word to restore them &mdash; some need none. Answers are whatever the source originally wrote.</p>
+    <div class="toolbar">
+      <select id="liveSource">
+        <option value="guardian" selected>The Guardian (random)</option>
+        <option value="wikinews">Wikinews (random)</option>
+      </select>
+      <button class="btn primary" id="liveNewBtn">New text</button>
+      <span id="liveStatus" style="color:var(--muted); font-size:.9rem;"></span>
+    </div>
+    <div id="guardianKeyRow" class="toolbar" style="margin-top:-2px;">
+      <label for="guardianKey" style="font-size:.85rem; color:var(--muted); white-space:nowrap;">Guardian API key:</label>
+      <input id="guardianKey" type="text" placeholder="paste your key…" autocomplete="off" spellcheck="false">
+      <button class="btn" id="guardianKeySave">Save</button>
+      <a href="https://open-platform.theguardian.com/access/" target="_blank" rel="noopener" style="font-size:.85rem; color:var(--accent); white-space:nowrap;">Get a free key</a>
+    </div>
+    <div id="liveCard" class="exercise"><div style="color:var(--muted); padding: 8px 0;">Opening this tab loads a random passage.</div></div>
+  </section>
+
+  <!-- ============ AI DRILLS ============ -->
+  <section id="ai" class="view">
+    <h2>AI drills</h2>
+    <p style="color:var(--muted); margin-top:0;">Sentences generated by an AI, targeted at the rule you pick. The articles are stripped &mdash; click each word to restore them. The explanation comes from the same AI.</p>
+    <div class="toolbar">
+      <select id="aiRule"></select>
+      <select id="aiDiff">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <select id="aiModel">
+        <option value="qwen/qwen3.8-27b" selected>Fast (Qwen 27B)</option>
+        <option value="openai/gpt-oss-120b">Quality (GPT-OSS 120B)</option>
+      </select>
+      <button class="btn primary" id="aiNewBtn">New exercise</button>
+      <span id="aiStatus" style="color:var(--muted); font-size:.9rem;"></span>
+      <span id="aiQuota" style="color:var(--muted); font-size:.85rem;"></span>
+    </div>
+    <div id="aiKeyRow" class="toolbar" style="margin-top:-2px;">
+      <label for="aiKey" style="font-size:.85rem; color:var(--muted); white-space:nowrap;">Groq API key:</label>
+      <input id="aiKey" type="text" placeholder="paste your key…" autocomplete="off" spellcheck="false">
+      <button class="btn" id="aiKeySave">Save</button>
+      <a href="https://console.groq.com/keys" target="_blank" rel="noopener" style="font-size:.85rem; color:var(--accent); white-space:nowrap;">Get a free key</a>
+    </div>
+    <div id="aiCard" class="exercise"><div style="color:var(--muted); padding: 8px 0;">Opening this tab generates a drill.</div></div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="quiz" class="view">
+    <h2>Quiz</h2>
+    <div class="toolbar">
+      <span class="score-pill">Score: <span id="quizScore">0</span></span>
+      <span class="score-pill">Question: <span id="quizCount">0</span></span>
+      <button class="btn primary" id="restartQuiz">Restart quiz</button>
+    </div>
+    <div class="progress"><div id="quizProgress"></div></div>
+    <div id="quizCard" class="exercise"></div>
+  </section>
+
+</main>
+
+<footer>
+  Explanations in English, designed around the mental models Polish gives you (<em>jakiś</em>, <em>ten/ta/to</em>, word order). Built for a Polish speaker learning English articles.
+</footer>
+
+<script>
+"use strict";
+
+// ---------------- DATA ----------------
+// answer is one of: "a", "an", "the", "0" (0 = no article)
+const EXERCISES = [
+  // A vs An
+  { module: "A vs An", text: "She is ___ engineer.", answer: "an",
+    why: "\"an\" before a vowel sound — engineer starts with /e/.", gloss: "Ona jest inżynierem." },
+  { module: "A vs An", text: "He wants ___ new job.", answer: "a",
+    why: "Consonant sound /n/ follows — use \"a\".", gloss: "On chce (jakąś) nową pracę." },
+  { module: "A vs An", text: "I saw ___ elephant at the zoo.", answer: "an",
+    why: "Vowel sound /e/ follows — use \"an\".", gloss: "Widziałem słonia w zoo." },
+  { module: "A vs An", text: "It was ___ honor to meet you.", answer: "an",
+    why: "\"honor\" has a silent h and starts with a vowel sound /ɒ/.", gloss: "To był zaszczyt pana/panią poznać." },
+  { module: "A vs An", text: "We need ___ USB cable.", answer: "a",
+    why: "\"USB\" is pronounced /juː/ — a consonant sound, so \"a\".", gloss: "Potrzebujemy kabla USB." },
+  { module: "A vs An", text: "She works as ___ doctor.", answer: "a",
+    why: "Jobs take a/an. Polish says \"pracuje jako lekarz\" — English must add \"a\".", gloss: "Pracuje jako lekarz." },
+
+  // Jakiś vs Ten
+  { module: "Jakiś vs Ten", text: "I need ___ new laptop.", answer: "a",
+    why: "One of many, not yet identified — \"jakiś\" fits.", gloss: "Potrzebuję (jakiegoś) nowego laptopa." },
+  { module: "Jakiś vs Ten", text: "Can you pass me ___ salt?", answer: "the",
+    why: "There's a specific salt on the table — \"tę sól\" fits.", gloss: "Podasz mi (tę) sól?" },
+  { module: "Jakiś vs Ten", text: "There is ___ problem with the server.", answer: "a",
+    why: "A new problem being introduced — \"jakiś problem\".", gloss: "Jest (jakiś) problem z serwerem." },
+  { module: "Jakiś vs Ten", text: "___ problem is that we ran out of disk space.", answer: "the",
+    why: "Now it's the specific problem — \"ten problem\".", gloss: "(Ten) problem polega na tym, że zabrakło miejsca." },
+
+  // Singular noun alarm
+  { module: "Singular Noun Alarm", text: "I want to buy ___ car.", answer: "a",
+    why: "Singular countable noun needs a bodyguard; new info → \"a\".", gloss: "Chcę kupić (jakiś) samochód." },
+  { module: "Singular Noun Alarm", text: "___ car I bought last year is already broken.", answer: "the",
+    why: "Specific car, identified by the relative clause.", gloss: "(Ten) samochód, który kupiłem, już jest zepsuty." },
+  { module: "Singular Noun Alarm", text: "This is ___ book.", answer: "a",
+    why: "\"this\" already acts as the pointer, but \"book\" still needs its own determiner → \"a\".", gloss: "To jest (jakaś) książka." },
+  { module: "Singular Noun Alarm", text: "Send the report by ___ email.", answer: "0",
+    why: "Fixed expression \"by email\" — no article.", gloss: "Wyślij raport e-mailem." },
+  { module: "Singular Noun Alarm", text: "She goes to ___ work at eight.", answer: "0",
+    why: "Fixed expression \"go to work\" (the activity) — no article.", gloss: "Chodzi do pracy na ósmą." },
+
+  // First vs second mention
+  { module: "First vs Second Mention", text: "I saw ___ dog in the park.", answer: "a",
+    why: "First mention — the reader doesn't know this dog yet.", gloss: "Widziałem (jakiegoś) psa w parku." },
+  { module: "First vs Second Mention", text: "___ dog was chasing a ball.", answer: "the",
+    why: "Second mention — now we know which dog.", gloss: "(Ten) pies gonił piłkę." },
+  { module: "First vs Second Mention", text: "We deployed ___ new configuration.", answer: "a",
+    why: "First mention, brand-new to the text.", gloss: "Wdrożyliśmy (jakąś) nową konfigurację." },
+  { module: "First vs Second Mention", text: "___ configuration fixed the bug.", answer: "the",
+    why: "Second mention — the specific configuration we just deployed.", gloss: "(Ta) konfiguracja naprawiła błąd." },
+
+  // Unique reference
+  { module: "Unique Reference", text: "___ sun rises in the east.", answer: "the",
+    why: "There is only one sun — unique reference.", gloss: "Słońce wschodzi na wschodzie." },
+  { module: "Unique Reference", text: "We store customer data in ___ database.", answer: "the",
+    why: "One known database in the architecture — \"the\".", gloss: "Przechowujemy dane w (tej) bazie danych." },
+  { module: "Unique Reference", text: "She is ___ best developer on the team.", answer: "the",
+    why: "Superlative → \"the best\".", gloss: "Jest najlepszą programistką w zespole." },
+  { module: "Unique Reference", text: "This is ___ first time I've seen this error.", answer: "the",
+    why: "Ordinal → \"the first\".", gloss: "To pierwszy raz, kiedy widzę ten błąd." },
+  { module: "Unique Reference", text: "___ production environment is down.", answer: "the",
+    why: "Only one production environment — unique.", gloss: "Środowisko produkcyjne nie działa." },
+
+  // Zero article
+  { module: "Zero Article", text: "I love ___ music.", answer: "0",
+    why: "Music in general — no article.", gloss: "Uwielbiam muzykę (ogólnie)." },
+  { module: "Zero Article", text: "___ cats are independent animals.", answer: "0",
+    why: "General plural — all cats, no article.", gloss: "Koty to niezależne zwierzęta." },
+  { module: "Zero Article", text: "She speaks ___ English fluently.", answer: "0",
+    why: "Languages take no article.", gloss: "Mówi płynnie po angielsku." },
+  { module: "Zero Article", text: "___ life is short.", answer: "0",
+    why: "Abstract noun in general — no article.", gloss: "Życie jest krótkie." },
+  { module: "Zero Article", text: "We play ___ football on Sundays.", answer: "0",
+    why: "Sports take no article.", gloss: "Gramy w piłkę w niedziele." },
+  { module: "Zero Article", text: "I usually have ___ breakfast at seven.", answer: "0",
+    why: "Meals in general take no article.", gloss: "Zwykle jem śniadanie o siódmej." },
+  { module: "Zero Article", text: "I need ___ advice.", answer: "0",
+    why: "\"advice\" is uncountable — cannot take \"a\", and it's general here.", gloss: "Potrzebuję rady." },
+  { module: "Zero Article", text: "She gave me ___ information.", answer: "0",
+    why: "\"information\" is uncountable — no \"a\", and general → no \"the\".", gloss: "Dała mi informacje." },
+  { module: "Zero Article", text: "That's ___ useful information.", answer: "0",
+    why: "Tricky: \"useful\" starts with /juː/ but \"information\" is uncountable, so still no \"a\".", gloss: "To przydatna informacja." },
+
+  // Polish word order
+  { module: "Polish Word Order", text: "___ file was sent.", answer: "the",
+    why: "\"Plik został wysłany\" — topic first, the known file.", gloss: "Plik został wysłany. (ten plik)" },
+  { module: "Polish Word Order", text: "___ file was sent.", answer: "a",
+    why: "\"Został wysłany plik\" — new information last, \"jakiś plik\".", gloss: "Został wysłany plik. (jakiś plik)" },
+  { module: "Polish Word Order", text: "___ report is ready.", answer: "the",
+    why: "The report you asked for — known → \"the\".", gloss: "Raport jest gotowy. (ten raport)" },
+
+  // Jobs & nationality
+  { module: "Jobs & Nationalities", text: "He is ___ Pole.", answer: "a",
+    why: "Nationality as a noun takes \"a\".", gloss: "On jest Polakiem." },
+  { module: "Jobs & Nationalities", text: "She is ___ teacher.", answer: "a",
+    why: "Jobs take \"a/an\". Polish drops it; English doesn't.", gloss: "Ona jest nauczycielką." },
+  { module: "Jobs & Nationalities", text: "He is ___ honest man.", answer: "an",
+    why: "\"honest\" has a silent h → vowel sound → \"an\".", gloss: "On jest uczciwym człowiekiem." },
+];
+
+const MODULES = [...new Set(EXERCISES.map(e => e.module))];
+
+// ---------------- STATE ----------------
+const LS_MISTAKES = "articles-suite-mistakes";
+const LS_QUIZ_BEST = "articles-suite-quiz-best";
+
+function getMistakes() {
+  try { return JSON.parse(localStorage.getItem(LS_MISTAKES) || "[]"); }
+  catch { return []; }
+}
+function addMistake(id) {
+  const m = getMistakes();
+  if (!m.includes(id)) { m.push(id); localStorage.setItem(LS_MISTAKES, JSON.stringify(m)); }
+}
+function clearMistakes() {
+  localStorage.removeItem(LS_MISTAKES);
+}
+
+// ---------------- NAV ----------------
+const navButtons = document.querySelectorAll("nav button");
+navButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    navButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+    document.getElementById(btn.dataset.view).classList.add("active");
+  });
+});
+
+// ---------------- SHARED EXERCISE RENDERER ----------------
+const OPTION_LABELS = { a: "a", an: "an", the: "the", "0": "∅ (no article)" };
+const ORDER = ["a", "an", "the", "0"];
+
+function renderExercise(container, item, onAnswer, onNext, nextLabel) {
+  container.innerHTML = "";
+
+  const moduleLabel = document.createElement("div");
+  moduleLabel.className = "module-label";
+  moduleLabel.textContent = item.module;
+
+  const sentence = document.createElement("div");
+  sentence.className = "sentence";
+  const [before, after] = item.text.split("___");
+  sentence.appendChild(document.createTextNode(before));
+  const blank = document.createElement("span");
+  blank.className = "blank";
+  blank.textContent = "\u2002\u2002\u2002";
+  blank.dataset.answer = item.answer;
+  sentence.appendChild(blank);
+  if (after) sentence.appendChild(document.createTextNode(after));
+
+  const options = document.createElement("div");
+  options.className = "options";
+
+  const feedback = document.createElement("div");
+  feedback.className = "feedback";
+
+  const hintBtn = document.createElement("button");
+  hintBtn.className = "hint-btn";
+  hintBtn.textContent = "Show hint";
+  hintBtn.addEventListener("click", () => {
+    if (hintBtn.textContent.startsWith("Show")) {
+      hintBtn.textContent = "Hide hint";
+      const g = document.createElement("div");
+      g.className = "gloss";
+      g.textContent = "Polish: " + item.gloss;
+      feedback.appendChild(g);
+      feedback.classList.add("show");
+    } else {
+      hintBtn.textContent = "Show hint";
+      const g = feedback.querySelector(".gloss");
+      if (g) g.remove();
+      if (!feedback.querySelector(".why")) feedback.classList.remove("show");
+    }
+  });
+
+  const nextRow = document.createElement("div");
+  nextRow.className = "next-row";
+  const nextBtn = document.createElement("button");
+  nextBtn.className = "btn primary";
+  nextBtn.textContent = nextLabel || "Next";
+  nextBtn.disabled = true;
+  nextBtn.addEventListener("click", () => onNext());
+
+  let answered = false;
+  ORDER.forEach(val => {
+    const b = document.createElement("button");
+    b.className = "option";
+    b.textContent = OPTION_LABELS[val];
+    b.addEventListener("click", () => {
+      if (answered) return;
+      answered = true;
+      const correct = val === item.answer;
+
+      blank.textContent = OPTION_LABELS[item.answer];
+      blank.classList.add("filled", correct ? "correct" : "wrong");
+
+      // style options
+      options.querySelectorAll(".option").forEach(opt => {
+        opt.disabled = true;
+        if (opt.textContent === OPTION_LABELS[item.answer]) opt.classList.add("reveal");
+        if (opt.textContent === OPTION_LABELS[val] && !correct) opt.classList.add("chosen-wrong");
+      });
+      if (correct) {
+        options.querySelectorAll(".option").forEach(opt => {
+          if (opt.textContent === OPTION_LABELS[item.answer]) {
+            opt.classList.remove("reveal"); opt.classList.add("chosen-correct");
+          }
+        });
+      }
+
+      feedback.className = "feedback show " + (correct ? "ok" : "no");
+      feedback.innerHTML = "";
+      const title = document.createElement("div");
+      title.textContent = correct ? "Correct ✓" : "Not quite ✗ — correct answer: " + OPTION_LABELS[item.answer];
+      title.style.fontWeight = "700";
+      const why = document.createElement("div");
+      why.className = "why";
+      why.textContent = item.why;
+      feedback.appendChild(title);
+      feedback.appendChild(why);
+      feedback.appendChild(hintBtn);
+      if (hintBtn.textContent.startsWith("Hide")) {
+        const g = document.createElement("div");
+        g.className = "gloss";
+        g.textContent = "Polish: " + item.gloss;
+        feedback.appendChild(g);
+      }
+
+      nextBtn.disabled = false;
+      onAnswer(item, correct);
+    });
+    options.appendChild(b);
+  });
+
+  container.appendChild(moduleLabel);
+  container.appendChild(sentence);
+  container.appendChild(options);
+  nextRow.appendChild(nextBtn);
+  container.appendChild(nextRow);
+  container.appendChild(feedback);
+  feedback.appendChild(hintBtn);
+}
+
+// ---------------- PRACTICE ----------------
+const moduleFilter = document.getElementById("moduleFilter");
+const modeFilter = document.getElementById("modeFilter");
+MODULES.forEach(m => {
+  const o = document.createElement("option");
+  o.value = m; o.textContent = m;
+  moduleFilter.appendChild(o);
+});
+
+function getPracticeList() {
+  let list = EXERCISES.map((e, i) => ({ ...e, id: i }));
+  if (moduleFilter.value !== "all") list = list.filter(e => e.module === moduleFilter.value);
+  if (modeFilter.value === "mistakes") {
+    const m = getMistakes();
+    list = list.filter(e => m.includes(e.id));
+  }
+  return list;
+}
+
+let practiceIdx = 0;
+let practiceList = [];
+
+function startPractice() {
+  practiceList = getPracticeList();
+  practiceIdx = 0;
+  updatePracticeProgress();
+  const card = document.getElementById("practiceCard");
+  if (practiceList.length === 0) {
+    card.innerHTML = '<div style="padding:20px;color:var(--muted)">No sentences here. ' +
+      (modeFilter.value === "mistakes" ? 'You have no recorded mistakes yet — great!' : 'Nothing to show.') + '</div>';
+    return;
+  }
+  renderPracticeCard();
+}
+
+function updatePracticeProgress() {
+  const bar = document.getElementById("practiceProgress");
+  if (practiceList.length === 0) { bar.style.width = "0%"; return; }
+  bar.style.width = ((practiceIdx) / practiceList.length * 100) + "%";
+}
+
+function renderPracticeCard() {
+  const item = practiceList[practiceIdx];
+  const card = document.getElementById("practiceCard");
+  renderExercise(card, item,
+    (it, correct) => { if (!correct) addMistake(it.id); },
+    () => {
+      practiceIdx++;
+      if (practiceIdx >= practiceList.length) {
+        updatePracticeProgress();
+        card.innerHTML = '<div class="results"><div class="big">✓</div><p>Set complete. ' +
+          'Switch topic or mode to keep going, or try the quiz.</p>' +
+          '<button class="btn primary" id="againBtn">Go again</button></div>';
+        document.getElementById("againBtn").addEventListener("click", startPractice);
+      } else {
+        updatePracticeProgress();
+        renderPracticeCard();
+      }
+    },
+    (practiceIdx === practiceList.length - 1) ? "Finish" : "Next"
+  );
+}
+
+moduleFilter.addEventListener("change", startPractice);
+modeFilter.addEventListener("change", startPractice);
+document.getElementById("clearMistakes").addEventListener("click", () => {
+  clearMistakes();
+  startPractice();
+});
+
+// ---------------- QUIZ ----------------
+let quizList = [];
+let quizIdx = 0;
+let quizScore = 0;
+
+function startQuiz() {
+  quizList = EXERCISES.map((e, i) => ({ ...e, id: i }));
+  // shuffle
+  for (let i = quizList.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [quizList[i], quizList[j]] = [quizList[j], quizList[i]];
+  }
+  quizIdx = 0;
+  quizScore = 0;
+  document.getElementById("quizScore").textContent = "0";
+  document.getElementById("quizCount").textContent = "0";
+  document.getElementById("quizProgress").style.width = "0%";
+  renderQuizCard();
+}
+
+function renderQuizCard() {
+  const card = document.getElementById("quizCard");
+  const total = quizList.length;
+  document.getElementById("quizCount").textContent = (quizIdx + 1) + " / " + total;
+  document.getElementById("quizProgress").style.width = (quizIdx / total * 100) + "%";
+
+  if (quizIdx >= total) {
+    const pct = Math.round(quizScore / total * 100);
+    const bestKey = LS_QUIZ_BEST;
+    let best = localStorage.getItem(bestKey);
+    if (best === null || quizScore > parseInt(best, 10)) localStorage.setItem(bestKey, String(quizScore));
+    best = localStorage.getItem(bestKey);
+
+    let html = '<div class="results"><div class="big">' + quizScore + ' / ' + total + '</div>';
+    html += '<p>' + pct + '% correct' + (best ? ' · best: ' + best + '/' + total : '') + '</p>';
+    const wrong = quizList.filter((e, i) => e.wrong);
+    if (wrong.length > 0) {
+      html += '<div class="mistake-list"><strong>Review these:</strong><ul>';
+      wrong.forEach(e => {
+        html += '<li>' + e.text.replace("___", "<strong>" + OPTION_LABELS[e.answer] + "</strong>") +
+          '<br><span style="color:var(--muted)">' + e.why + '</span></li>';
+      });
+      html += '</ul></div>';
+    }
+    html += '<button class="btn primary" id="quizAgain">Restart quiz</button></div>';
+    card.innerHTML = html;
+    document.getElementById("quizAgain").addEventListener("click", startQuiz);
+    return;
+  }
+
+  const item = quizList[quizIdx];
+  renderExercise(card, item,
+    (it, correct) => {
+      it.wrong = !correct;
+      if (correct) quizScore++;
+      else addMistake(it.id);
+      document.getElementById("quizScore").textContent = quizScore;
+    },
+    () => {
+      quizIdx++;
+      renderQuizCard();
+    },
+    (quizIdx === total - 1) ? "Finish" : "Next"
+  );
+}
+
+document.getElementById("restartQuiz").addEventListener("click", startQuiz);
+
+// ---------------- SPOT & INSERT ----------------
+const SPOT_EXERCISES = [
+  { module: "A vs An", full: "She is an engineer.", tokens: ["She","is","engineer."], articles: {2:"an"},
+    why: "\"engineer\" starts with a vowel sound, so \"an\".", gloss: "Ona jest inżynierem." },
+  { module: "A vs An", full: "We need a USB cable.", tokens: ["We","need","USB","cable."], articles: {2:"a"},
+    why: "\"USB\" is pronounced /juː/ — a consonant sound, so \"a\".", gloss: "Potrzebujemy kabla USB." },
+  { module: "A vs An", full: "It was an honor to meet you.", tokens: ["It","was","honor","to","meet","you."], articles: {2:"an"},
+    why: "\"honor\" has a silent h and starts with a vowel sound.", gloss: "To był zaszczyt pana/panią poznać." },
+  { module: "A vs An", full: "He is an honest man.", tokens: ["He","is","honest","man."], articles: {2:"an"},
+    why: "\"honest\" has a silent h → vowel sound → \"an\".", gloss: "On jest uczciwym człowiekiem." },
+  { module: "A vs An", full: "He works in an office.", tokens: ["He","works","in","office."], articles: {3:"an"},
+    why: "\"office\" starts with a vowel sound /ɒ/.", gloss: "Pracuje w biurze." },
+
+  { module: "Singular Noun Alarm", full: "I want to buy a car.", tokens: ["I","want","to","buy","car."], articles: {4:"a"},
+    why: "Singular countable noun needs a determiner; new info → \"a\".", gloss: "Chcę kupić (jakiś) samochód." },
+  { module: "Singular Noun Alarm", full: "This is a book.", tokens: ["This","is","book."], articles: {2:"a"},
+    why: "\"book\" is a singular countable noun — it must not be bare.", gloss: "To jest książka." },
+  { module: "Singular Noun Alarm", full: "She goes to work at eight.", tokens: ["She","goes","to","work","at","eight."], articles: {},
+    why: "Fixed expression \"go to work\" (the activity) takes no article.", gloss: "Chodzi do pracy na ósmą." },
+  { module: "Singular Noun Alarm", full: "Send the report by email.", tokens: ["Send","report","by","email."], articles: {1:"the"},
+    why: "\"the report\" (specific), but \"by email\" is a fixed expression with no article.", gloss: "Wyślij raport e-mailem." },
+  { module: "Singular Noun Alarm", full: "She works as a doctor.", tokens: ["She","works","as","doctor."], articles: {3:"a"},
+    why: "Jobs take \"a/an\". Polish drops it; English doesn't.", gloss: "Pracuje jako lekarz." },
+
+  { module: "Jakiś vs Ten", full: "I need a new laptop.", tokens: ["I","need","new","laptop."], articles: {2:"a"},
+    why: "One of many, not yet identified — \"jakiś\" fits.", gloss: "Potrzebuję (jakiegoś) nowego laptopa." },
+  { module: "Jakiś vs Ten", full: "Can you pass me the salt?", tokens: ["Can","you","pass","me","salt?"], articles: {4:"the"},
+    why: "There's a specific salt on the table — \"tę sól\" fits.", gloss: "Podasz mi (tę) sól?" },
+  { module: "Jakiś vs Ten", full: "There is a problem with the server.", tokens: ["There","is","problem","with","server."], articles: {2:"a",4:"the"},
+    why: "New problem → \"a\"; the specific server → \"the\".", gloss: "Jest problem z (tym) serwerem." },
+  { module: "Jakiś vs Ten", full: "The problem is that we ran out of disk space.", tokens: ["problem","is","that","we","ran","out","of","disk","space."], articles: {0:"the"},
+    why: "Now the specific problem — \"ten problem\".", gloss: "(Ten) problem polega na tym, że zabrakło miejsca." },
+
+  { module: "First vs Second Mention", full: "I saw a dog in the park. The dog was chasing a ball.", tokens: ["I","saw","dog","in","park.","dog","was","chasing","ball."], articles: {2:"a",4:"the",5:"the",8:"a"},
+    why: "First mention of dog → \"a\"; \"the park\" is known; second mention → \"the dog\"; new ball → \"a\".", gloss: "Widziałem psa w parku. Ten pies gonił piłkę." },
+  { module: "First vs Second Mention", full: "We deployed a new configuration. The configuration fixed the bug.", tokens: ["We","deployed","new","configuration.","configuration","fixed","bug."], articles: {2:"a",4:"the",6:"the"},
+    why: "First mention → \"a\"; second mention → \"the\".", gloss: "Wdrożyliśmy nową konfigurację. Ta konfiguracja naprawiła błąd." },
+
+  { module: "Unique Reference", full: "The sun rises in the east.", tokens: ["sun","rises","in","east."], articles: {0:"the",3:"the"},
+    why: "Unique things → \"the sun\", \"the east\".", gloss: "Słońce wschodzi na wschodzie." },
+  { module: "Unique Reference", full: "We store customer data in the database.", tokens: ["We","store","customer","data","in","database."], articles: {5:"the"},
+    why: "One known database in the architecture → \"the\".", gloss: "Przechowujemy dane w (tej) bazie." },
+  { module: "Unique Reference", full: "She is the best developer on the team.", tokens: ["She","is","best","developer","on","team."], articles: {2:"the",5:"the"},
+    why: "Superlative → \"the best\"; specific team → \"the team\".", gloss: "Jest najlepszą programistką w zespole." },
+  { module: "Unique Reference", full: "This is the first time I've seen this error.", tokens: ["This","is","first","time","I've","seen","this","error."], articles: {2:"the"},
+    why: "Ordinal → \"the first\".", gloss: "To pierwszy raz, kiedy widzę ten błąd." },
+  { module: "Unique Reference", full: "The production environment is down.", tokens: ["production","environment","is","down."], articles: {0:"the"},
+    why: "Only one production environment → \"the\".", gloss: "Środowisko produkcyjne nie działa." },
+  { module: "Unique Reference", full: "The OPL security team reviewed the change.", tokens: ["OPL","security","team","reviewed","change."], articles: {0:"the",4:"the"},
+    why: "One OPL security team → \"the\"; the specific change → \"the\".", gloss: "Zespół bezpieczeństwa OPL przejrzał zmianę." },
+
+  { module: "Zero Article", full: "I love music.", tokens: ["I","love","music."], articles: {},
+    why: "Music in general — no article.", gloss: "Uwielbiam muzykę (ogólnie)." },
+  { module: "Zero Article", full: "Cats are independent animals.", tokens: ["Cats","are","independent","animals."], articles: {},
+    why: "General plural — all cats, no article.", gloss: "Koty to niezależne zwierzęta." },
+  { module: "Zero Article", full: "She speaks English fluently.", tokens: ["She","speaks","English","fluently."], articles: {},
+    why: "Languages take no article.", gloss: "Mówi płynnie po angielsku." },
+  { module: "Zero Article", full: "Life is short.", tokens: ["Life","is","short."], articles: {},
+    why: "Abstract noun in general — no article.", gloss: "Życie jest krótkie." },
+  { module: "Zero Article", full: "We play football on Sundays.", tokens: ["We","play","football","on","Sundays."], articles: {},
+    why: "Sports take no article.", gloss: "Gramy w piłkę w niedziele." },
+  { module: "Zero Article", full: "I need advice.", tokens: ["I","need","advice."], articles: {},
+    why: "\"advice\" is uncountable — no \"a\", and general here.", gloss: "Potrzebuję rady." },
+  { module: "Zero Article", full: "That's useful information.", tokens: ["That's","useful","information."], articles: {},
+    why: "\"information\" is uncountable, so no article even with an adjective.", gloss: "To przydatna informacja." },
+  { module: "Zero Article", full: "I usually have breakfast at seven.", tokens: ["I","usually","have","breakfast","at","seven."], articles: {},
+    why: "Meals in general take no article.", gloss: "Zwykle jem śniadanie o siódmej." },
+  { module: "Zero Article", full: "I drink coffee every morning.", tokens: ["I","drink","coffee","every","morning."], articles: {},
+    why: "Coffee in general — no article.", gloss: "Piję kawę każdego ranka." },
+  { module: "Zero Article", full: "The coffee you made this morning was delicious.", tokens: ["coffee","you","made","this","morning","was","delicious."], articles: {0:"the"},
+    why: "A specific cup of coffee (identified by \"you made\") → \"the\".", gloss: "Kawa, którą zrobiłeś dziś rano, była pyszna." },
+
+  { module: "Polish Word Order", full: "The file was sent.", tokens: ["file","was","sent."], articles: {0:"the"},
+    why: "\"Plik został wysłany\" — topic first, the known file.", gloss: "Plik został wysłany. (ten plik)" },
+  { module: "Polish Word Order", full: "A file was sent.", tokens: ["file","was","sent."], articles: {0:"a"},
+    why: "\"Został wysłany plik\" — new information last, \"jakiś plik\".", gloss: "Został wysłany plik. (jakiś plik)" },
+  { module: "Polish Word Order", full: "The report is ready.", tokens: ["report","is","ready."], articles: {0:"the"},
+    why: "The report you asked for — known → \"the\".", gloss: "Raport jest gotowy. (ten raport)" },
+
+  { module: "Jobs & Nationalities", full: "He is a Pole.", tokens: ["He","is","Pole."], articles: {2:"a"},
+    why: "Nationality as a noun takes \"a\".", gloss: "On jest Polakiem." },
+  { module: "Jobs & Nationalities", full: "He is a teacher. His wife is an engineer.", tokens: ["He","is","teacher.","His","wife","is","engineer."], articles: {2:"a",6:"an"},
+    why: "Jobs take \"a/an\"; \"engineer\" starts with a vowel sound.", gloss: "On jest nauczycielem. Jego żona jest inżynierem." },
+];
+
+const SPOT_MODULES = [...new Set(SPOT_EXERCISES.map(e => e.module))];
+const LS_SPOT_MISTAKES = "articles-suite-spot-mistakes";
+const SPOT_CYCLE = ["a", "an", "the"];
+
+function getSpotMistakes() { try { return JSON.parse(localStorage.getItem(LS_SPOT_MISTAKES) || "[]"); } catch { return []; } }
+function addSpotMistake(id) { const m = getSpotMistakes(); if (!m.includes(id)) { m.push(id); localStorage.setItem(LS_SPOT_MISTAKES, JSON.stringify(m)); } }
+function clearSpotMistakes() { localStorage.removeItem(LS_SPOT_MISTAKES); }
+
+const spotModuleFilter = document.getElementById("spotModuleFilter");
+const spotModeFilter = document.getElementById("spotModeFilter");
+SPOT_MODULES.forEach(m => {
+  const o = document.createElement("option");
+  o.value = m; o.textContent = m;
+  spotModuleFilter.appendChild(o);
+});
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function getSpotList() {
+  let list = SPOT_EXERCISES.map((e, i) => ({ ...e, id: i }));
+  if (spotModuleFilter.value !== "all") list = list.filter(e => e.module === spotModuleFilter.value);
+  if (spotModeFilter.value === "mistakes") {
+    const m = getSpotMistakes();
+    list = list.filter(e => m.includes(e.id));
+  }
+  if (spotModeFilter.value === "random" || spotModeFilter.value === "mistakes") {
+    list = shuffle(list);
+  }
+  return list;
+}
+
+let spotIdx = 0;
+let spotList = [];
+
+function startSpot() {
+  spotList = getSpotList();
+  spotIdx = 0;
+  updateSpotProgress();
+  const card = document.getElementById("spotCard");
+  if (spotList.length === 0) {
+    card.innerHTML = '<div style="padding:20px;color:var(--muted)">' +
+      (spotModeFilter.value === "mistakes" ? 'No recorded mistakes yet — nice!' : 'Nothing to show.') + '</div>';
+    return;
+  }
+  renderSpotCard();
+}
+
+function updateSpotProgress() {
+  const bar = document.getElementById("spotProgress");
+  if (spotList.length === 0) { bar.style.width = "0%"; return; }
+  bar.style.width = (spotIdx / spotList.length * 100) + "%";
+}
+
+function renderSpotCard() {
+  const item = spotList[spotIdx];
+  const card = document.getElementById("spotCard");
+  renderSpotExercise(card, item, spotModeFilter.value === "inorder",
+    (it, correct) => { if (!correct) addSpotMistake(it.id); },
+    () => {
+      spotIdx++;
+      if (spotIdx >= spotList.length) {
+        updateSpotProgress();
+        card.innerHTML = '<div class="results"><div class="big">✓</div><p>Set complete.</p>' +
+          '<button class="btn primary" id="spotAgain">Go again</button></div>';
+        document.getElementById("spotAgain").addEventListener("click", startSpot);
+      } else {
+        updateSpotProgress();
+        renderSpotCard();
+      }
+    }
+  );
+}
+
+function renderSpotExercise(container, item, showModule, onAnswer, onNext, onWrong) {
+  container.innerHTML = "";
+
+  if (showModule) {
+    const moduleLabel = document.createElement("div");
+    moduleLabel.className = "module-label";
+    moduleLabel.textContent = item.module;
+    container.appendChild(moduleLabel);
+  }
+
+  const sentence = document.createElement("div");
+  sentence.className = "spot-sentence";
+
+  const state = {};
+  const wordEls = [];
+  const artEls = [];
+
+  item.tokens.forEach((word, i) => {
+    const wrap = document.createElement("span");
+    wrap.className = "spot-word-wrap";
+    const art = document.createElement("span");
+    art.className = "spot-art";
+    const w = document.createElement("span");
+    w.className = "spot-word";
+    w.textContent = word;
+    w.addEventListener("click", () => {
+      if (sentence.classList.contains("done")) return;
+      const cur = state[i];
+      let next;
+      if (!cur) next = SPOT_CYCLE[0];
+      else {
+        const idx = SPOT_CYCLE.indexOf(cur);
+        next = (idx === SPOT_CYCLE.length - 1) ? null : SPOT_CYCLE[idx + 1];
+      }
+      state[i] = next;
+      art.textContent = next || "";
+    });
+    wrap.appendChild(art);
+    wrap.appendChild(w);
+    sentence.appendChild(wrap);
+    sentence.appendChild(document.createTextNode(" "));
+    artEls[i] = art;
+    wordEls[i] = w;
+  });
+
+  const legend = document.createElement("div");
+  legend.className = "spot-legend";
+  legend.textContent = "Click a word to add an article above it: none → a → an → the. Some sentences are already correct — press Check without adding anything.";
+
+  const feedback = document.createElement("div");
+  feedback.className = "feedback";
+
+  let hintBtn = null;
+  if (item.gloss) {
+    hintBtn = document.createElement("button");
+    hintBtn.className = "hint-btn";
+    hintBtn.textContent = "Show hint";
+    hintBtn.addEventListener("click", () => {
+      if (hintBtn.textContent.startsWith("Show")) {
+        hintBtn.textContent = "Hide hint";
+        const g = document.createElement("div");
+        g.className = "gloss";
+        g.textContent = "Polish: " + item.gloss;
+        feedback.appendChild(g);
+        feedback.classList.add("show");
+      } else {
+        hintBtn.textContent = "Show hint";
+        const g = feedback.querySelector(".gloss");
+        if (g) g.remove();
+        if (!feedback.querySelector(".why")) feedback.classList.remove("show");
+      }
+    });
+  }
+
+  const actionBtn = document.createElement("button");
+  actionBtn.className = "btn primary";
+  actionBtn.textContent = "Check";
+  let done = false;
+
+  actionBtn.addEventListener("click", () => {
+    if (done) { onNext(); return; }
+    done = true;
+    sentence.classList.add("done");
+
+    const mistakes = checkSpot(item, state);
+    const correct = mistakes.length === 0;
+    revealSpot(item, state, wordEls, artEls);
+
+    feedback.className = "feedback show " + (correct ? "ok" : "no");
+    feedback.innerHTML = "";
+    const title = document.createElement("div");
+    title.style.fontWeight = "700";
+    title.textContent = correct ? "Correct ✓" : "Not quite ✗";
+    feedback.appendChild(title);
+
+    if (!correct) {
+      const list = document.createElement("ul");
+      list.style.margin = "6px 0 0";
+      list.style.paddingLeft = "20px";
+      mistakes.forEach(m => {
+        const li = document.createElement("li");
+        if (m.type === "missing") li.textContent = "Missing article before \u201C" + m.word + "\u201D \u2192 " + m.want;
+        else if (m.type === "extra") li.textContent = "Extra article before \u201C" + m.word + "\u201D (should be nothing)";
+        else li.textContent = "Wrong article before \u201C" + m.word + "\u201D: you put " + m.got + ", need " + m.want;
+        list.appendChild(li);
+      });
+      feedback.appendChild(list);
+    }
+
+    const correctLine = document.createElement("div");
+    correctLine.className = "why";
+    const b = document.createElement("strong");
+    b.textContent = "Correct version: ";
+    correctLine.appendChild(b);
+    correctLine.appendChild(document.createTextNode(item.full));
+    feedback.appendChild(correctLine);
+
+    const why = document.createElement("div");
+    why.className = "why";
+    why.textContent = item.why;
+    feedback.appendChild(why);
+
+    if (hintBtn) feedback.appendChild(hintBtn);
+    if (hintBtn && hintBtn.textContent.startsWith("Hide")) {
+      const g = document.createElement("div");
+      g.className = "gloss";
+      g.textContent = "Polish: " + item.gloss;
+      feedback.appendChild(g);
+    }
+
+    onAnswer(item, correct);
+    actionBtn.textContent = "Next";
+    if (!correct && onWrong) onWrong(mistakes, feedback, item);
+  });
+
+  container.appendChild(sentence);
+  container.appendChild(legend);
+  container.appendChild(actionBtn);
+  container.appendChild(feedback);
+  if (hintBtn) feedback.appendChild(hintBtn);
+}
+
+function checkSpot(item, state) {
+  const correct = item.articles;
+  const mistakes = [];
+  const keys = new Set();
+  Object.keys(correct).forEach(k => keys.add(Number(k)));
+  Object.keys(state).forEach(k => keys.add(Number(k)));
+  [...keys].sort((a, b) => a - b).forEach(i => {
+    const c = correct[i];
+    const u = state[i];
+    if (c && u && c === u) return;
+    if (c && !u) mistakes.push({ type: "missing", word: item.tokens[i], want: c });
+    else if (!c && u) mistakes.push({ type: "extra", word: item.tokens[i], got: u });
+    else if (c && u && c !== u) mistakes.push({ type: "wrong", word: item.tokens[i], want: c, got: u });
+  });
+  return mistakes;
+}
+
+function revealSpot(item, state, wordEls, artEls) {
+  const correct = item.articles;
+  item.tokens.forEach((word, i) => {
+    const c = correct[i];
+    const u = state[i];
+    const w = wordEls[i];
+    const a = artEls[i];
+    w.classList.remove("good", "bad");
+    a.classList.remove("reveal-ok", "reveal-bad");
+    a.textContent = "";
+    if (c && u === c) {
+      w.classList.add("good");
+      a.textContent = c;
+      a.classList.add("reveal-ok");
+    } else if (c && !u) {
+      w.classList.add("bad");
+      a.textContent = c;
+      a.classList.add("reveal-ok");
+    } else if (c && u !== c) {
+      w.classList.add("bad");
+      a.textContent = u;
+      a.classList.add("reveal-bad");
+    } else if (!c && u) {
+      w.classList.add("bad");
+      a.textContent = u;
+      a.classList.add("reveal-bad");
+    }
+  });
+}
+
+spotModuleFilter.addEventListener("change", startSpot);
+spotModeFilter.addEventListener("change", startSpot);
+document.getElementById("clearSpotMistakes").addEventListener("click", () => { clearSpotMistakes(); startSpot(); });
+
+// ---------------- LIVE ----------------
+const liveSource = document.getElementById("liveSource");
+const liveNewBtn = document.getElementById("liveNewBtn");
+const liveStatus = document.getElementById("liveStatus");
+const liveCard = document.getElementById("liveCard");
+
+const WIKINEWS_URL = "https://en.wikinews.org/w/api.php?action=query&generator=random&grnnamespace=0&prop=extracts&explaintext=1&exintro=1&format=json&origin=*";
+const GUARDIAN_SEARCH_URL = "https://content.guardianapis.com/search";
+const LS_GUARDIAN_KEY = "articles-suite-guardian-key";
+
+function getGuardianKey() {
+  try {
+    const v = localStorage.getItem(LS_GUARDIAN_KEY);
+    if (v !== null) return v.trim();
+  } catch {}
+  return "";
+}
+function setGuardianKey(k) {
+  try { localStorage.setItem(LS_GUARDIAN_KEY, k.trim()); } catch {}
+}
+
+let liveBusy = false;
+
+function setLiveStatus(msg) { liveStatus.textContent = msg; }
+
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return res.json();
+}
+
+function decodeEntities(s) {
+  const el = document.createElement("textarea");
+  el.innerHTML = s;
+  return el.value;
+}
+
+function cleanGuardian(text) {
+  let s = text;
+  s = s.replace(/<[^>]*>/g, " "); // strip HTML tags (bodyText is HTML)
+  s = decodeEntities(s);
+  s = s.replace(/\s+/g, " ").trim();
+  return s;
+}
+
+async function fetchGuardianText(key) {
+  const page = 1 + Math.floor(Math.random() * 5000);
+  const url = GUARDIAN_SEARCH_URL + "?api-key=" + encodeURIComponent(key) +
+    "&type=article&order-by=newest&page-size=1&page=" + page +
+    "&show-fields=bodyText,trailText,headline";
+  const d = await fetchJson(url);
+  const res = d && d.response && d.response.results && d.response.results[0];
+  if (!res) throw new Error("no result");
+  const f = res.fields || {};
+  let text = (f.bodyText && f.bodyText.length > 200) ? f.bodyText : (f.trailText || "");
+  if (!text) throw new Error("no text");
+  return { title: res.webTitle || "Untitled", text: text };
+}
+
+async function fetchWikinewsText() {
+  const d = await fetchJson(WIKINEWS_URL);
+  const pages = d && d.query && d.query.pages;
+  if (!pages) throw new Error("no pages");
+  const p = Object.values(pages)[0];
+  if (!p || !p.extract) throw new Error("no extract");
+  return { title: p.title || "Untitled", text: p.extract };
+}
+
+function cleanWikinews(text) {
+  let s = text.replace(/\s+/g, " ").trim();
+  // strip leading dateline: "Friday, November 19, 2004"
+  s = s.replace(/^(?:Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day,\s+\w+\s+\d{1,2},\s+\d{4}\s*/i, "");
+  // strip a leading ALL-CAPS location dateline ending in an em-dash and its trailing junk
+  s = s.replace(/^[A-Z][A-Z ,.'\-]*?—[\s'\-]*/, "");
+  // any residual leading dash/quote junk
+  s = s.replace(/^\s*[-–—'']+\s*/, "");
+  s = s.replace(/\s+/g, " ").trim();
+  if (/—/.test(s)) throw new Error("dirty text");
+  return s;
+}
+
+function splitSentences(text) {
+  return text
+    .replace(/\s+/g, " ")
+    .split(/(?<=[.!?])\s+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+}
+
+function countArticles(tokens) {
+  return tokens.filter(t => /^(a|an|the)$/i.test(t)).length;
+}
+
+function buildItemFromTokens(tokens, fullText) {
+  const stripped = [];
+  const articles = {};
+  let idx = 0;
+  tokens.forEach(t => {
+    if (/^(a|an|the)$/i.test(t)) {
+      articles[idx] = t.toLowerCase();
+    } else {
+      stripped.push(t);
+      idx++;
+    }
+  });
+  return { module: "Live", tokens: stripped, articles: articles, full: fullText, why: "", gloss: "" };
+}
+
+function buildLiveItem(text) {
+  const MAX_LEN = 250;
+  const sentences = splitSentences(text);
+  // Prefer a 2-sentence window, then 3, then 1; enforce a length cap and a sane article count.
+  for (const size of [2, 3, 1]) {
+    for (let i = 0; i + size <= sentences.length; i++) {
+      const win = sentences.slice(i, i + size).join(" ");
+      if (win.length > MAX_LEN) continue;
+      const tokens = win.split(/\s+/).filter(Boolean);
+      const n = countArticles(tokens);
+      if (n >= 2 && n <= 6) return buildItemFromTokens(tokens, win);
+    }
+  }
+  // Fallback: shortest sentence containing at least one article.
+  let best = null;
+  for (const s of sentences) {
+    const n = countArticles(s.split(/\s+/).filter(Boolean));
+    if (n >= 1 && (!best || s.length < best.length)) best = s;
+  }
+  const fallback = best || sentences[0];
+  if (!fallback) return null;
+  return buildItemFromTokens(fallback.split(/\s+/).filter(Boolean), fallback);
+}
+
+function randomHardcodedSpot() {
+  const e = SPOT_EXERCISES[Math.floor(Math.random() * SPOT_EXERCISES.length)];
+  return { module: e.module, tokens: e.tokens, articles: e.articles, full: e.full, why: e.why, gloss: e.gloss };
+}
+
+async function tryLiveSource(label, fetcher, cleaner) {
+  try {
+    const d = await fetcher();
+    const text = cleaner(d.text);
+    const item = buildLiveItem(text);
+    if (item && Object.keys(item.articles).length >= 1) {
+      item.title = d.title;
+      return { item, label };
+    }
+  } catch (e) {
+    console.warn("live source failed (" + label + ")", e);
+  }
+  return null;
+}
+
+async function loadLive() {
+  if (liveBusy) return;
+  liveBusy = true;
+  liveNewBtn.disabled = true;
+
+  const source = liveSource.value;
+  if (source === "guardian" && !getGuardianKey()) {
+    showGuardianHelp();
+    setLiveStatus("API key needed");
+    liveBusy = false;
+    liveNewBtn.disabled = false;
+    return;
+  }
+
+  setLiveStatus("Fetching…");
+  try {
+    let got = null;
+    if (source === "guardian") {
+      got = await tryLiveSource("The Guardian", () => fetchGuardianText(getGuardianKey()), cleanGuardian);
+    } else if (source === "wikinews") {
+      got = await tryLiveSource("Wikinews", fetchWikinewsText, cleanWikinews);
+    }
+    if (!got && source === "guardian") {
+      got = await tryLiveSource("Wikinews", fetchWikinewsText, cleanWikinews);
+    }
+    if (!got) throw new Error("no usable text");
+    got.item.why = "Source: " + got.label + " — " + (got.item.title || "Untitled");
+    renderLiveItem(got.item);
+    setLiveStatus("");
+  } catch (err) {
+    console.warn("live failed", err);
+    const fb = randomHardcodedSpot();
+    fb.why = "Couldn't load a live passage — showing a saved exercise instead.";
+    renderLiveItem(fb);
+    setLiveStatus("Offline fallback");
+  } finally {
+    liveBusy = false;
+    liveNewBtn.disabled = false;
+  }
+}
+
+function showGuardianHelp() {
+  liveCard.innerHTML =
+    '<div style="padding:8px 4px; line-height:1.6;">' +
+    '<p style="margin:0 0 .4em;"><strong>Add your Guardian API key to use this source.</strong></p>' +
+    '<ol style="margin:0 0 .4em 1.2em; color:var(--muted);">' +
+      '<li>Go to <a href="https://open-platform.theguardian.com/access/" target="_blank" rel="noopener">open-platform.theguardian.com/access</a>.</li>' +
+      '<li>Sign up free (email or Google).</li>' +
+      '<li>Request an API key &mdash; the free Developer plan gives 500 requests/day.</li>' +
+      '<li>Paste the key into the field above and press <strong>Save</strong>.</li>' +
+    '</ol>' +
+    '<p style="margin:0; color:var(--muted);">Prefer no key? Switch the source to <em>Wikinews</em>.</p>' +
+    '</div>';
+}
+
+function renderLiveItem(item) {
+  renderSpotExercise(liveCard, item, false, () => {}, () => loadLive());
+}
+
+const guardianKeyInput = document.getElementById("guardianKey");
+const guardianKeySave = document.getElementById("guardianKeySave");
+
+guardianKeyInput.value = getGuardianKey();
+
+guardianKeySave.addEventListener("click", () => {
+  setGuardianKey(guardianKeyInput.value);
+  setLiveStatus("Key saved");
+  if (liveSource.value === "guardian") loadLive();
+});
+guardianKeyInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    setGuardianKey(guardianKeyInput.value);
+    setLiveStatus("Key saved");
+    if (liveSource.value === "guardian") loadLive();
+  }
+});
+
+liveNewBtn.addEventListener("click", () => loadLive());
+
+let liveInitialized = false;
+document.querySelector('nav button[data-view="live"]').addEventListener("click", () => {
+  if (!liveInitialized) { liveInitialized = true; loadLive(); }
+});
+
+// ---------------- AI DRILLS ----------------
+const aiRuleSelect = document.getElementById("aiRule");
+const aiDiffSelect = document.getElementById("aiDiff");
+const aiModelSelect = document.getElementById("aiModel");
+const aiNewBtn = document.getElementById("aiNewBtn");
+const aiStatus = document.getElementById("aiStatus");
+const aiCard = document.getElementById("aiCard");
+const aiKeyInput = document.getElementById("aiKey");
+const aiKeySave = document.getElementById("aiKeySave");
+const aiQuota = document.getElementById("aiQuota");
+
+const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
+const LS_GROQ_KEY = "articles-suite-groq-key";
+
+function getGroqKey() {
+  try {
+    const v = localStorage.getItem(LS_GROQ_KEY);
+    if (v !== null) return v.trim();
+  } catch {}
+  return "";
+}
+function setGroqKey(k) {
+  try { localStorage.setItem(LS_GROQ_KEY, k.trim()); } catch {}
+}
+
+const AI_RULES = [
+  { id: "mixed", label: "Mixed rules", instr: "a mix of two or three different rules — a/an vs the, first-vs-second mention, unique/shared \"the\", and no article for general/uncountable nouns" },
+  { id: "random", label: "Random single rule", instr: "one randomly chosen single rule from: a/an vs the, first-vs-second mention, unique/shared \"the\", or no article for general/uncountable nouns" },
+  { id: "aan", label: "a vs an", instr: "the choice between \"a\" and \"an\" based on the sound that follows (vowel vs consonant)" },
+  { id: "firstsecond", label: "First vs second mention", instr: "introducing something with a/an first, then referring back to it with the" },
+  { id: "unique", label: "Unique reference", instr: "using \"the\" for things that are unique or already identified (the sun, the best, the only)" },
+  { id: "zero", label: "Zero article (no article)", instr: "the contrast between a general/uncountable noun (no article) and a specific one (the) — e.g. \"coffee\" in general vs \"the coffee\"" },
+  { id: "jobs", label: "Jobs & nationalities", instr: "using \"a/an\" with professions and nationalities (She is a doctor, He is a Pole)" },
+];
+
+AI_RULES.forEach(r => {
+  const o = document.createElement("option");
+  o.value = r.id; o.textContent = r.label;
+  aiRuleSelect.appendChild(o);
+});
+
+const AI_DIFFICULTIES = {
+  easy: { label: "Easy", min: 2, max: 4, spec: "ONE short sentence with about 2-3 articles (a, an, or the), simple vocabulary" },
+  medium: { label: "Medium", min: 3, max: 6, spec: "TWO sentences with AT LEAST 3 articles (a, an, or the); include at least one noun that correctly takes NO article (a general or uncountable noun) and one \"the\" for a specific/shared thing" },
+  hard: { label: "Hard", min: 4, max: 8, spec: "TWO or THREE sentences forming a short paragraph with AT LEAST 4 articles (a, an, or the); include at least one NO-article noun, one \"the\" for a unique/shared thing, and a first-mention/second-mention pair; use more advanced vocabulary and clauses" },
+};
+
+const AI_TOPICS = ["travel", "crime", "science", "technology", "business", "food", "sport", "health", "weather", "education", "art", "politics", "nature", "music", "work", "city life", "animals", "space", "history", "money"];
+
+const LS_AI_RECENT = "articles-suite-ai-recent";
+const AI_RECENT_MAX = 20;
+
+function normalizeText(s) { return s.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim(); }
+function getRecentTexts() { try { return JSON.parse(localStorage.getItem(LS_AI_RECENT) || "[]"); } catch { return []; } }
+function isRecentDuplicate(text) { const n = normalizeText(text); return getRecentTexts().some(t => normalizeText(t) === n); }
+function rememberText(text) {
+  try {
+    const list = getRecentTexts();
+    list.push(text);
+    while (list.length > AI_RECENT_MAX) list.shift();
+    localStorage.setItem(LS_AI_RECENT, JSON.stringify(list));
+  } catch {}
+}
+
+function setAIStatus(msg) { aiStatus.textContent = msg; }
+
+const LS_AI_USAGE = "articles-suite-ai-usage";
+const GROQ_DAILY_LIMIT = 1000;
+
+function todayKey() {
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+}
+function getUsage() {
+  try {
+    const u = JSON.parse(localStorage.getItem(LS_AI_USAGE) || "{}");
+    return (u.date === todayKey()) ? u : { date: todayKey(), count: 0 };
+  } catch { return { date: todayKey(), count: 0 }; }
+}
+function incrementUsage() {
+  const u = getUsage();
+  u.count += 1;
+  try { localStorage.setItem(LS_AI_USAGE, JSON.stringify(u)); } catch {}
+  renderQuota();
+}
+function renderQuota() {
+  const u = getUsage();
+  aiQuota.textContent = "Groq: " + u.count + "/" + GROQ_DAILY_LIMIT + " requests used today";
+}
+
+let aiBusy = false;
+
+function parseAIDrillJson(content) {
+  let s = content.trim();
+  s = s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
+  try { return JSON.parse(s); } catch (e) {
+    const m = s.match(/\{[\s\S]*\}/);
+    if (m) { try { return JSON.parse(m[0]); } catch (e2) { return null; } }
+    return null;
+  }
+}
+
+async function fetchAIDrill(rule, difficulty, topic, model, key) {
+  const prompt =
+    "You are an English teacher helping a Polish learner master English articles (a, an, the, or no article).\n" +
+    "Topic: " + topic + ". Write about this topic with concrete, specific, vivid details.\n" +
+    "Rule to demonstrate: " + rule.instr + ".\n" +
+    "Requirements: " + difficulty.spec + ".\n" +
+    "Write in natural, idiomatic English. Avoid textbook clichés (a dog chasing a ball, an apple and a banana). Be original — do not reuse a scenario.\n" +
+    "Return ONLY a JSON object with exactly two keys:\n" +
+    "{\"text\": \"<the sentence(s)>\", \"explanation\": \"<two short sentences in plain English explaining why each article (or no article) is used, referencing the specific words>\"}";
+  const res = await fetch(GROQ_URL, {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: model,
+      response_format: { type: "json_object" },
+      temperature: 0.8,
+      messages: [{ role: "user", content: prompt }]
+    })
+  });
+  incrementUsage();
+  if (!res.ok) throw new Error("Groq HTTP " + res.status);
+  const d = await res.json();
+  if (d.error) throw new Error(d.error.message || "Groq error");
+  const content = d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content;
+  if (!content) throw new Error("empty response");
+  const parsed = parseAIDrillJson(content);
+  if (!parsed || !parsed.text || typeof parsed.explanation !== "string") throw new Error("bad JSON");
+  return parsed;
+}
+
+function buildAIDrillItem(text, explanation) {
+  const tokens = text.split(/\s+/).filter(Boolean);
+  const item = buildItemFromTokens(tokens, text);
+  item.why = explanation;
+  item.gloss = "";
+  return item;
+}
+
+async function loadAIDrill() {
+  if (aiBusy) return;
+  const key = getGroqKey();
+  if (!key) {
+    showAIHelp();
+    setAIStatus("API key needed");
+    return;
+  }
+  aiBusy = true;
+  aiNewBtn.disabled = true;
+  setAIStatus("Generating…");
+  const rule = AI_RULES.find(r => r.id === aiRuleSelect.value) || AI_RULES[0];
+  const difficulty = AI_DIFFICULTIES[aiDiffSelect.value] || AI_DIFFICULTIES.medium;
+  const model = aiModelSelect.value;
+  const maxAttempts = (aiDiffSelect.value === "hard") ? 4 : 3;
+  try {
+    let item = null;
+    for (let attempt = 0; attempt < maxAttempts && !item; attempt++) {
+      try {
+        const topic = AI_TOPICS[Math.floor(Math.random() * AI_TOPICS.length)];
+        const { text, explanation } = await fetchAIDrill(rule, difficulty, topic, model, key);
+        const candidate = buildAIDrillItem(text, explanation);
+        const n = Object.keys(candidate.articles).length;
+        const minArticles = (rule.id === "mixed" || rule.id === "random") ? difficulty.min : 1;
+        if (n >= minArticles && n <= difficulty.max && !isRecentDuplicate(text)) {
+          item = candidate;
+          rememberText(text);
+        }
+      } catch (e) {
+        console.warn("AI drill attempt " + attempt + " failed", e);
+      }
+    }
+    if (!item) throw new Error("no usable drill");
+    item.module = rule.label;
+    renderAIDrill(item);
+    setAIStatus("");
+  } catch (err) {
+    console.warn("ai drill failed", err);
+    const fb = randomHardcodedSpot();
+    fb.why = "Couldn't generate a drill — showing a saved exercise instead.";
+    renderAIDrill(fb);
+    setAIStatus("Offline fallback");
+  } finally {
+    aiBusy = false;
+    aiNewBtn.disabled = false;
+  }
+}
+
+function showAIHelp() {
+  aiCard.innerHTML =
+    '<div style="padding:8px 4px; line-height:1.6;">' +
+    '<p style="margin:0 0 .4em;"><strong>Add your Groq API key to generate drills.</strong></p>' +
+    '<ol style="margin:0 0 .4em 1.2em; color:var(--muted);">' +
+      '<li>Go to <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.</li>' +
+      '<li>Sign up free (email / Google / GitHub).</li>' +
+      '<li>Create an API key and copy it (starts with <code>gsk_</code>).</li>' +
+      '<li>Paste it into the field above and press <strong>Save</strong>.</li>' +
+    '</ol>' +
+    '<p style="margin:0; color:var(--muted);">Prefer no key? Use the <em>Spot &amp; insert</em> or <em>Live</em> tabs instead.</p>' +
+    '</div>';
+}
+
+function renderAIDrill(item) {
+  renderSpotExercise(aiCard, item, true, () => {}, () => loadAIDrill(), explainAIMistakes);
+}
+
+async function explainAIMistakes(mistakes, feedbackEl, item) {
+  const key = getGroqKey();
+  if (!key || !mistakes || mistakes.length === 0) return;
+
+  const holder = document.createElement("div");
+  holder.style.marginTop = "8px";
+  const loading = document.createElement("div");
+  loading.className = "why";
+  loading.textContent = "Explaining your mistakes…";
+  holder.appendChild(loading);
+  feedbackEl.appendChild(holder);
+
+  try {
+    const lines = mistakes.map((m, i) => {
+      if (m.type === "missing") return (i + 1) + ". Missed the article before \"" + m.word + "\" — the correct article is \"" + m.want + "\".";
+      if (m.type === "extra") return (i + 1) + ". Inserted \"" + m.got + "\" before \"" + m.word + "\" — the correct form has no article there.";
+      return (i + 1) + ". Used \"" + m.got + "\" before \"" + m.word + "\" — the correct article is \"" + m.want + "\".";
+    }).join("\n");
+
+    const prompt =
+      "A Polish learner of English made these mistakes in this sentence:\n\"" + item.full + "\"\n" +
+      lines + "\n" +
+      "For EACH mistake, write ONE short sentence explaining why the learner's choice was wrong and what the correct rule is.\n" +
+      "Return ONLY a JSON object with exactly one key: {\"explanations\": [\"...\", \"...\"]} — one explanation per mistake, in the same order.";
+
+    const res = await fetch(GROQ_URL, {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: aiModelSelect.value,
+        response_format: { type: "json_object" },
+        temperature: 0.3,
+        messages: [{ role: "user", content: prompt }]
+      })
+    });
+    incrementUsage();
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const d = await res.json();
+    if (d.error) throw new Error(d.error.message || "Groq error");
+    const content = d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content;
+    const parsed = content ? parseAIDrillJson(content) : null;
+    const explanations = parsed && Array.isArray(parsed.explanations)
+      ? parsed.explanations.filter(e => typeof e === "string" && e.trim())
+      : null;
+
+    holder.innerHTML = "";
+    if (explanations && explanations.length) {
+      const h = document.createElement("div");
+      h.style.fontWeight = "700";
+      h.textContent = "Why your answers were wrong:";
+      holder.appendChild(h);
+      const ul = document.createElement("ul");
+      ul.style.margin = "4px 0 0";
+      ul.style.paddingLeft = "20px";
+      explanations.forEach(ex => {
+        const li = document.createElement("li");
+        li.textContent = ex;
+        ul.appendChild(li);
+      });
+      holder.appendChild(ul);
+    } else {
+      holder.remove();
+    }
+  } catch (e) {
+    console.warn("explain mistakes failed", e);
+    holder.innerHTML = "";
+    const msg = document.createElement("div");
+    msg.className = "why";
+    msg.textContent = "Couldn't explain these mistakes (" + (e && e.message) + ").";
+    holder.appendChild(msg);
+  }
+}
+
+aiKeyInput.value = getGroqKey();
+
+aiKeySave.addEventListener("click", () => {
+  setGroqKey(aiKeyInput.value);
+  setAIStatus("Key saved");
+  loadAIDrill();
+});
+aiKeyInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    setGroqKey(aiKeyInput.value);
+    setAIStatus("Key saved");
+    loadAIDrill();
+  }
+});
+
+aiNewBtn.addEventListener("click", () => loadAIDrill());
+
+let aiInitialized = false;
+document.querySelector('nav button[data-view="ai"]').addEventListener("click", () => {
+  if (!aiInitialized) { aiInitialized = true; loadAIDrill(); }
+});
+renderQuota();
+
+// ---------------- INIT ----------------
+startPractice();
+startSpot();
+startQuiz();
+</script>
+</body>
+</html>
